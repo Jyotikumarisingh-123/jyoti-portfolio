@@ -1,457 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jyoti Kumari - Technical Product Manager portfolio focused on Enterprise SaaS, GenAI, APIs, Cloud, DevOps and Observability." />
-  <title>Jyoti Kumari | Technical Product Manager</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#08111f;
-      --panel:#0d192b;
-      --panel2:#101f34;
-      --text:#eef5ff;
-      --muted:#9fb0c8;
-      --line:rgba(255,255,255,.09);
-      --primary:#77b8ff;
-      --primary2:#7cf0d6;
-      --accent:#b49cff;
-      --shadow:0 18px 60px rgba(0,0,0,.28);
-      --radius:22px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:
-        radial-gradient(circle at 12% 8%, rgba(119,184,255,.15), transparent 28%),
-        radial-gradient(circle at 88% 18%, rgba(124,240,214,.09), transparent 24%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.65;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%}
-    .container{width:min(1120px,92%);margin:auto}
-
-    .nav{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:blur(14px);
-      background:rgba(8,17,31,.76);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{
-      min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px;
-    }
-    .brand{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
-    .brand span{color:var(--primary)}
-    .nav-links{display:flex;gap:24px;align-items:center;color:var(--muted);font-size:.92rem;font-weight:600}
-    .nav-links a:hover{color:var(--text)}
-
-    .hero{padding:100px 0 66px}
-    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:54px;align-items:center}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--line);
-      border-radius:999px;color:#d8e7fa;background:rgba(255,255,255,.035);font-size:.82rem;font-weight:700;
-      letter-spacing:.06em;text-transform:uppercase;
-    }
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--primary2);box-shadow:0 0 18px var(--primary2)}
-    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.12;margin-top:0}
-    h1{font-size:clamp(3rem,7vw,6rem);letter-spacing:-.055em;margin:24px 0 22px}
-    .gradient{
-      background:linear-gradient(90deg,var(--primary),var(--primary2),var(--accent));
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-    }
-    .hero-copy{font-size:1.14rem;color:#bdcbe0;max-width:760px}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:13px;
-      font-weight:800;font-size:.92rem;border:1px solid var(--line);transition:.2s ease;
-    }
-    .btn-primary{background:linear-gradient(135deg,#62adff,#7cf0d6);color:#05101d;border:0}
-    .btn-secondary{background:rgba(255,255,255,.04)}
-    .btn:hover{transform:translateY(-2px)}
-
-    .profile-card{
-      border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-      border-radius:28px;padding:30px;box-shadow:var(--shadow);
-    }
-    .initials{
-      width:86px;height:86px;border-radius:25px;display:grid;place-items:center;
-      background:linear-gradient(135deg,rgba(119,184,255,.28),rgba(124,240,214,.2));
-      border:1px solid rgba(255,255,255,.12);font-size:1.75rem;font-weight:800;margin-bottom:26px;
-    }
-    .profile-card h3{font-size:1.45rem;margin-bottom:7px}
-    .profile-card p{color:var(--muted);margin-top:0}
-    .mini-list{display:grid;gap:12px;margin-top:24px}
-    .mini{
-      display:flex;justify-content:space-between;gap:18px;padding:12px 0;border-top:1px solid var(--line);font-size:.9rem
-    }
-    .mini span:first-child{color:var(--muted)}
-
-    .metrics{padding:18px 0 76px}
-    .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .metric{
-      border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:18px;padding:22px;
-    }
-    .metric strong{display:block;font-family:Manrope,sans-serif;font-size:2rem;letter-spacing:-.04em}
-    .metric span{color:var(--muted);font-size:.86rem}
-
-    section{padding:80px 0}
-    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:34px;margin-bottom:34px}
-    .section-kicker{color:var(--primary2);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
-    h2{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.045em;margin:8px 0 0}
-    .section-intro{color:var(--muted);font-size:1rem;max-width:650px}
-
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
-      border:1px solid var(--line);border-radius:var(--radius);padding:26px;
-    }
-    .card-num{
-      display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;
-      background:rgba(119,184,255,.12);color:var(--primary);font-weight:800;margin-bottom:20px
-    }
-    .card h3{font-size:1.2rem;margin-bottom:12px}
-    .card p{color:var(--muted);font-size:.94rem;margin-bottom:0}
-
-    .case-grid{display:grid;gap:20px}
-    .case{
-      border:1px solid var(--line);border-radius:26px;padding:30px;background:var(--panel);
-      display:grid;grid-template-columns:.42fr 1fr;gap:34px;
-    }
-    .tag{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(124,240,214,.1);
-      color:var(--primary2);font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-    .case h3{font-size:1.6rem;margin:15px 0 10px}
-    .case-side p{color:var(--muted);font-size:.9rem}
-    .case-body p{color:#bdcbe0;margin-top:0}
-    .case-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
-    .point{
-      border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:15px;padding:15px;
-      font-size:.88rem;color:#cad7e9
-    }
-    .point strong{display:block;color:var(--text);margin-bottom:4px}
-
-    .timeline{display:grid;gap:16px}
-    .timeline-item{
-      display:grid;grid-template-columns:220px 1fr;gap:30px;padding:28px;border:1px solid var(--line);
-      border-radius:22px;background:rgba(255,255,255,.03);
-    }
-    .timeline-date{color:var(--primary2);font-size:.85rem;font-weight:800}
-    .timeline-item h3{margin-bottom:8px}
-    .timeline-item p{color:var(--muted);margin:8px 0}
-    .timeline-item ul{color:#c3d0e2;padding-left:20px;margin-bottom:0}
-    .timeline-item li{margin:8px 0}
-
-    .skills-wrap{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{
-      padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.035);
-      color:#cedaeb;font-size:.86rem;font-weight:600
-    }
-
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .edu-title{font-size:1.25rem;margin-bottom:6px}
-    .muted{color:var(--muted)}
-
-    .contact{
-      border:1px solid var(--line);border-radius:30px;padding:44px;
-      background:
-        radial-gradient(circle at 80% 20%,rgba(124,240,214,.12),transparent 30%),
-        linear-gradient(145deg,rgba(119,184,255,.08),rgba(255,255,255,.025));
-    }
-    .contact h2{max-width:760px;margin-bottom:18px}
-    .contact p{color:var(--muted);max-width:720px}
-    .contact-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-
-    footer{padding:34px 0 50px;color:#778aa4;font-size:.85rem;border-top:1px solid var(--line);margin-top:70px}
-
-    @media (max-width:900px){
-      .hero-grid,.section-head,.case,.timeline-item,.split{grid-template-columns:1fr}
-      .metric-grid,.cards{grid-template-columns:repeat(2,1fr)}
-      .profile-card{max-width:560px}
-      .nav-links{display:none}
-      .hero{padding-top:72px}
-    }
-    @media (max-width:560px){
-      .metric-grid,.cards,.case-points{grid-template-columns:1fr}
-      h1{font-size:3.2rem}
-      section{padding:62px 0}
-      .contact{padding:28px}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jyoti Kumari - DevOps, Technical Observability & SRE Engineer Portfolio">
+<title>Jyoti Kumari | DevOps • Observability • SRE Engineer</title>
+<style>
+:root{
+  --bg:#07111f; --panel:#0d1b2d; --panel2:#10243a; --text:#eaf2ff;
+  --muted:#9db0c7; --accent:#55d6be; --accent2:#6ea8fe; --line:#203750;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.4px}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--white)}
+.hero{padding:95px 0 70px;background:radial-gradient(circle at 80% 20%,#163a54 0,transparent 34%),linear-gradient(135deg,#07111f,#09192a)}
+.badge{display:inline-block;border:1px solid #2b536b;color:var(--accent);background:#0b2030;padding:7px 13px;border-radius:999px;font-size:13px;margin-bottom:20px}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.02;max-width:900px;letter-spacing:-2.5px}
+.hero h1 span{color:var(--accent)}
+.hero p{max-width:760px;color:var(--muted);font-size:18px;margin:24px 0}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 18px;border-radius:9px;border:1px solid var(--line);font-weight:700;font-size:14px}
+.btn.primary{background:var(--accent);color:#05221c;border-color:var(--accent)}
+.btn.secondary{background:transparent}
+section{padding:78px 0;border-bottom:1px solid var(--line)}
+.section-kicker{color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px}
+h2{font-size:34px;margin:8px 0 30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:24px}
+.card h3{margin-bottom:10px;font-size:19px}.card p{color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.tag{font-size:12px;padding:5px 9px;border:1px solid #2b425a;border-radius:999px;color:#c8d8ea;background:#0a1727}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+.lead{font-size:17px;color:#c6d4e4}
+.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.metric{background:var(--panel);border:1px solid var(--line);padding:20px;border-radius:14px}
+.metric strong{display:block;font-size:27px;color:var(--accent)}
+.metric span{color:var(--muted);font-size:13px}
+.timeline{display:grid;gap:18px}
+.role{border-left:3px solid var(--accent);padding:2px 0 2px 22px}
+.role h3{font-size:19px}.role .company{color:var(--accent2);font-weight:700}
+.role .date{color:var(--muted);font-size:13px;margin:3px 0 9px}
+.role ul{padding-left:18px;color:#c2d0df;font-size:14px}
+.role li{margin:5px 0}
+.arch{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:center}
+.arch div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center;font-size:13px;font-weight:700}
+.arch .arrow{background:transparent;border:0;color:var(--accent);font-size:24px;padding:0}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project h3{color:var(--white);margin-bottom:7px}
+.project p{font-size:14px;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-card{background:linear-gradient(145deg,#0e2033,#0b1726);border:1px solid var(--line);padding:28px;border-radius:16px}
+.contact-card a{color:var(--accent)}
+footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+@media(max-width:800px){
+ .nav-links{display:none}.grid,.about,.projects,.contact{grid-template-columns:1fr}
+ .arch{grid-template-columns:1fr}.arch .arrow{transform:rotate(90deg)}
+ .hero{padding-top:70px}h1{letter-spacing:-1.5px}
+}
+</style>
 </head>
-
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top">JYOTI<span>.</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Case Studies</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Jyoti<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a>
+      <a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="container">
+    <div class="badge">DEVOPS • OBSERVABILITY • SRE</div>
+    <h1>Technical <span>Observability</span> & SRE Engineer</h1>
+    <p>
+      I build and support reliable monitoring and observability solutions across applications,
+      infrastructure, cloud and Kubernetes environments—combining APM, DevOps, automation,
+      incident response, RCA and AI-assisted observability.
+    </p>
+    <div class="buttons">
+      <a class="btn primary" href="#experience">View Experience</a>
+      <a class="btn secondary" href="#projects">View Projects</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/jyoti-kumari-780a96209" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-kicker">Profile</div>
+    <h2>Engineering reliability through observability</h2>
+    <div class="about">
+      <div>
+        <p class="lead">
+          Technical professional with 4+ years of experience across APM, observability,
+          performance monitoring, cloud infrastructure, DevOps and enterprise client support.
+          Experienced with Dynatrace, Datadog, AppDynamics, New Relic and Elastic, with hands-on
+          exposure to AWS, Azure, Docker, Kubernetes, OpenTelemetry, Python, SQL and automation.
+        </p>
+        <br>
+        <p class="lead">
+          I focus on turning telemetry into actionable signals: dashboards, alerts, SLI/SLO
+          views, anomaly detection, root-cause analysis, incident triage and operational reporting.
+        </p>
+      </div>
+      <div class="metrics">
+        <div class="metric"><strong>4+</strong><span>Years of technical experience</span></div>
+        <div class="metric"><strong>5+</strong><span>APM / observability platforms</span></div>
+        <div class="metric"><strong>Cloud</strong><span>AWS & Azure environments</span></div>
+        <div class="metric"><strong>AI + RCA</strong><span>LLM, RAG & AIOps concepts</span></div>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <main id="top">
-    <header class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow"><span class="dot"></span> Technical Product Manager · Enterprise SaaS · GenAI</span>
-          <h1>I turn complex <span class="gradient">technical systems</span> into products people can use.</h1>
-          <p class="hero-copy">
-            Product-focused Senior Software Engineer with 3+ years driving roadmap and delivery for enterprise B2B SaaS.
-            Experienced across GenAI/LLM integrations, observability, APIs, cloud & DevOps, agile delivery, stakeholder management,
-            and Fortune 500 customer discovery.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#work">View Product Work</a>
-            <a class="btn btn-secondary" href="mailto:jyotikumarisingh299@gmail.com">Contact Me</a>
-          </div>
-        </div>
-
-        <aside class="profile-card">
-          <div class="initials">JK</div>
-          <h3>Jyoti Kumari</h3>
-          <p>Technical Product Manager / Product Manager</p>
-          <div class="mini-list">
-            <div class="mini"><span>Location</span><strong>Delhi, India</strong></div>
-            <div class="mini"><span>Domain</span><strong>Enterprise B2B SaaS</strong></div>
-            <div class="mini"><span>Focus</span><strong>GenAI · APIs · Observability</strong></div>
-            <div class="mini"><span>Delivery</span><strong>0→GA · Agile · Roadmaps</strong></div>
-          </div>
-        </aside>
-      </div>
-    </header>
-
-    <section class="metrics">
-      <div class="container metric-grid">
-        <div class="metric"><strong>50+</strong><span>PRDs & feature releases driven through execution</span></div>
-        <div class="metric"><strong>100%</strong><span>Enterprise adoption for a flagship 0→GA feature</span></div>
-        <div class="metric"><strong>95%+</strong><span>Sprint completion rate across 50+ sprints</span></div>
-        <div class="metric"><strong>40%</strong><span>Growth in data ecosystem through new integrations</span></div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">About</div>
-            <h2>Engineering depth. Product ownership.</h2>
-          </div>
-          <p class="section-intro">
-            I work at the intersection of product, engineering, customer problems, and delivery. My background lets me translate
-            technical complexity into clear requirements, prioritize trade-offs with engineering, and connect product decisions to
-            measurable customer outcomes.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <div class="card-num">01</div>
-            <h3>Product Strategy</h3>
-            <p>Roadmapping, discovery, competitive analysis, prioritization, PRDs, user stories, release scoping, and feature ownership.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">02</div>
-            <h3>Technical Product Depth</h3>
-            <p>REST APIs, SQL, microservices, AWS, Docker, Kubernetes, Jenkins, Git, CI/CD, observability, performance and load testing.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">03</div>
-            <h3>AI Product Delivery</h3>
-            <p>OpenAI API, chat completions, prompt design, function/tool calling, and productizing natural-language workflows inside enterprise SaaS.</p>
-          </article>
+<section id="skills">
+  <div class="container">
+    <div class="section-kicker">Technical Stack</div>
+    <h2>Tools & capabilities</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Observability & APM</h3>
+        <p>Application, infrastructure and service monitoring with telemetry, dashboards, alerts and RCA.</p>
+        <div class="tags">
+          <span class="tag">Dynatrace</span><span class="tag">Datadog</span><span class="tag">AppDynamics</span>
+          <span class="tag">New Relic</span><span class="tag">Elastic</span><span class="tag">OpenTelemetry</span>
         </div>
       </div>
-    </section>
-
-    <section id="work">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Selected Product Work</div>
-            <h2>Case studies with measurable impact.</h2>
-          </div>
-          <p class="section-intro">
-            These examples show how I approach discovery, product definition, technical collaboration, rollout, and measurable outcomes.
-          </p>
-        </div>
-
-        <div class="case-grid">
-          <article class="case">
-            <div class="case-side">
-              <span class="tag">GenAI / LLM</span>
-              <h3>RoboAssist</h3>
-              <p>Natural-language assistant for enterprise observability workflows.</p>
-            </div>
-            <div class="case-body">
-              <p>
-                Replaced manual UI navigation across 20+ load-testing, APM-monitoring, and fault-injection workflows by defining the
-                product requirements and prompt/tool-calling architecture for an OpenAI GPT-powered assistant and driving the
-                cross-functional build with engineering.
-              </p>
-              <div class="case-points">
-                <div class="point"><strong>Problem</strong>Complex workflows required repeated manual navigation.</div>
-                <div class="point"><strong>Product Role</strong>PRD, workflow design, prompt/tool-calling architecture, engineering alignment.</div>
-                <div class="point"><strong>Technical Surface</strong>OpenAI API, tool/function calling, enterprise observability workflows.</div>
-                <div class="point"><strong>Outcome</strong>Natural-language access across 20+ technical workflows.</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-side">
-              <span class="tag">0 → GA</span>
-              <h3>Metric Configuration</h3>
-              <p>Flagship enterprise feature from concept to general availability.</p>
-            </div>
-            <div class="case-body">
-              <p>
-                Took the platform’s highest-usage feature from concept to GA by translating enterprise requirements into scoped
-                product specifications, coordinating cross-functional execution, and supporting rollout across customer environments.
-              </p>
-              <div class="case-points">
-                <div class="point"><strong>Ownership</strong>Concept, requirements, prioritization and execution support.</div>
-                <div class="point"><strong>Stakeholders</strong>Engineering, QA, design, product and enterprise customers.</div>
-                <div class="point"><strong>Product Type</strong>Enterprise APM / observability SaaS.</div>
-                <div class="point"><strong>Outcome</strong>100% adoption across enterprise clients.</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-side">
-              <span class="tag">Platform Strategy</span>
-              <h3>Integrations & Licensing</h3>
-              <p>Expanded platform capability and commercial readiness.</p>
-            </div>
-            <div class="case-body">
-              <p>
-                Scoped and shipped five new data-source integrations—including Snowflake, SNMP and Active Directory—while also defining
-                a licensing and entitlement PRD covering tiered pricing, Stripe payment integration, and competitor pricing analysis.
-              </p>
-              <div class="case-points">
-                <div class="point"><strong>Platform Growth</strong>Five new data-source integrations.</div>
-                <div class="point"><strong>Impact</strong>40% growth in the platform’s data ecosystem.</div>
-                <div class="point"><strong>Commercial Scope</strong>Tiered pricing, entitlements and Stripe integration.</div>
-                <div class="point"><strong>Market Input</strong>Competitive analysis across enterprise APM vendors.</div>
-              </div>
-            </div>
-          </article>
+      <div class="card">
+        <h3>Cloud & Containers</h3>
+        <p>Monitoring and troubleshooting cloud and containerized workloads and their dependencies.</p>
+        <div class="tags">
+          <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">EC2</span>
+          <span class="tag">S3</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
         </div>
       </div>
-    </section>
-
-    <section id="experience">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Experience</div>
-            <h2>Product delivery inside engineering.</h2>
-          </div>
-          <p class="section-intro">
-            My work combines technical execution with product management responsibilities—requirements, roadmaps, discovery,
-            stakeholder communication, sprint planning, demos, and release delivery.
-          </p>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-date">JUL 2022 — PRESENT</div>
-            <div>
-              <h3>Senior Software Engineer — Product Management Track</h3>
-              <p>Cavisson Systems Inc. · Noida, India · Promoted Apr 2025</p>
-              <ul>
-                <li>Authored 50+ PRDs and user stories translating complex enterprise requirements into executable product specifications.</li>
-                <li>Led customer discovery and demos across 5+ Fortune 500 accounts, including Kohl’s, Nike and GMF.</li>
-                <li>Supported 50+ sprints with a 95%+ completion rate across engineering, QA and design.</li>
-                <li>Ran competitive intelligence against Datadog, Dynatrace and AppDynamics to inform major product releases.</li>
-                <li>Worked across GenAI, observability, performance testing, integrations, APIs and enterprise platform workflows.</li>
-              </ul>
-            </div>
-          </article>
+      <div class="card">
+        <h3>DevOps & Automation</h3>
+        <p>Automation, source control, CI/CD concepts and operational scripting for repeatable workflows.</p>
+        <div class="tags">
+          <span class="tag">Git</span><span class="tag">Jenkins</span><span class="tag">Maven</span>
+          <span class="tag">Python</span><span class="tag">PowerShell</span><span class="tag">Git Bash</span>
         </div>
       </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Skills</div>
-            <h2>Product + technology toolkit.</h2>
-          </div>
-          <p class="section-intro">
-            A TPM needs enough technical depth to make better product decisions and enough product discipline to keep engineering
-            focused on customer and business outcomes.
-          </p>
-        </div>
-
-        <div class="skills-wrap">
-          <span class="skill">Product Strategy</span><span class="skill">Roadmapping</span><span class="skill">PRDs</span>
-          <span class="skill">User Stories</span><span class="skill">Backlog Prioritization</span><span class="skill">Agile / Scrum</span>
-          <span class="skill">Stakeholder Management</span><span class="skill">Customer Discovery</span><span class="skill">Competitive Analysis</span>
-          <span class="skill">Enterprise B2B SaaS</span><span class="skill">OpenAI API</span><span class="skill">Prompt Design</span>
-          <span class="skill">Tool / Function Calling</span><span class="skill">REST APIs</span><span class="skill">Postman</span>
-          <span class="skill">Java</span><span class="skill">Python</span><span class="skill">SQL</span><span class="skill">Microservices</span>
-          <span class="skill">AWS</span><span class="skill">Docker</span><span class="skill">Kubernetes</span><span class="skill">Jenkins</span>
-          <span class="skill">Git</span><span class="skill">CI/CD</span><span class="skill">Datadog</span><span class="skill">Grafana</span>
-          <span class="skill">Prometheus</span><span class="skill">Performance Testing</span><span class="skill">Load Testing</span>
-          <span class="skill">Jira</span><span class="skill">Confluence</span><span class="skill">Miro</span><span class="skill">Figma</span>
+      <div class="card">
+        <h3>SRE Practices</h3>
+        <p>Reliability-focused monitoring and operational support around service health and incidents.</p>
+        <div class="tags">
+          <span class="tag">SLI/SLO</span><span class="tag">Alerting</span><span class="tag">Incident Triage</span>
+          <span class="tag">RCA</span><span class="tag">Anomaly Detection</span><span class="tag">Service Health</span>
         </div>
       </div>
-    </section>
-
-    <section>
-      <div class="container split">
-        <article class="card">
-          <div class="section-kicker">Education</div>
-          <h3 class="edu-title">Master of Computer Applications (MCA)</h3>
-          <p class="muted">GIET University, Odisha · 2022</p>
-          <p>CGPA 9.95/10 · University Gold Medalist · Specialization: Software Engineering</p>
-        </article>
-        <article class="card">
-          <div class="section-kicker">Certifications</div>
-          <h3 class="edu-title">Continuous Product & Delivery Learning</h3>
-          <p class="muted">Certified Scrum Master (CSM) · Scrum Alliance</p>
-          <p class="muted">Product Management Fundamentals · Pendo.io · 2024</p>
-          <p class="muted">Jenkins CI/CD Pipeline Automation · LinkedIn Learning</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="contact">
-          <div class="section-kicker">Contact</div>
-          <h2>Building a technical product where customer problems meet engineering complexity?</h2>
-          <p>
-            I’m interested in Technical Product Manager, Product Manager, AI Product, Enterprise SaaS, Observability,
-            Platform and developer-focused product opportunities.
-          </p>
-          <div class="contact-links">
-            <a class="btn btn-primary" href="mailto:jyotikumarisingh299@gmail.com">jyotikumarisingh299@gmail.com</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/jyoti-kumari-780a96209" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn-secondary" href="tel:+918235713191">+91 82357 13191</a>
-          </div>
+      <div class="card">
+        <h3>Systems & Data</h3>
+        <p>Application, JVM, database and messaging technologies encountered in enterprise monitoring.</p>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">JVM</span><span class="tag">JMX</span>
+          <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
+          <span class="tag">MongoDB</span><span class="tag">Kafka</span><span class="tag">Redis</span>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <h3>AI / AIOps</h3>
+        <p>AI-assisted operational analysis using LLM concepts, RAG and observability telemetry.</p>
+        <div class="tags">
+          <span class="tag">AIOps</span><span class="tag">LLM Observability</span><span class="tag">RAG</span>
+          <span class="tag">Generative AI</span><span class="tag">Root Cause Analysis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">© 2026 Jyoti Kumari · Technical Product Manager Portfolio</div>
-  </footer>
+<section>
+  <div class="container">
+    <div class="section-kicker">Observability Architecture</div>
+    <h2>From telemetry to action</h2>
+    <div class="arch">
+      <div>Applications<br>Infrastructure<br>Cloud</div>
+      <div class="arrow">→</div>
+      <div>OpenTelemetry<br>Metrics • Logs • Traces</div>
+      <div class="arrow">→</div>
+      <div>APM / Observability<br>Dashboards • Alerts</div>
+      <div class="arrow">→</div>
+      <div>Incident Response<br>RCA • SLO • Automation</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-kicker">Experience</div>
+    <h2>What I have worked on</h2>
+    <div class="timeline">
+      <div class="role">
+        <h3>Senior Software / Technical Observability Engineer</h3>
+        <div class="company">Cavisson Systems</div>
+        <div class="date">Enterprise APM & Observability • 3+ years</div>
+        <ul>
+          <li>Worked with enterprise APM and observability capabilities across application performance, infrastructure, databases and service health.</li>
+          <li>Configured monitoring, alerts, thresholds, dashboards and client-specific observability views.</li>
+          <li>Supported troubleshooting of performance and availability issues and participated in incident response and root-cause analysis.</li>
+          <li>Worked with Flowpath, Hotspot, traces, method timing, DDR, monitors, agent configuration and Auto RCA capabilities.</li>
+          <li>Supported integrations and deployments involving Dynatrace, Datadog, New Relic, AppDynamics and OpenTelemetry concepts.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <h3>Cybersecurity / Observability Intern</h3>
+        <div class="company">Sattrix</div>
+        <div class="date">Security & technical operations</div>
+        <ul>
+          <li>Worked around cybersecurity and monitoring concepts while strengthening operational troubleshooting and technical analysis.</li>
+          <li>Built practical exposure to enterprise monitoring workflows, documentation and cross-functional collaboration.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <h3>Technical / Full-Stack Engineering Experience</h3>
+        <div class="company">Bruiohub</div>
+        <div class="date">Software & web technology</div>
+        <ul>
+          <li>Contributed to software and web-oriented projects, building broader engineering understanding useful for production monitoring and troubleshooting.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-kicker">Selected Work</div>
+    <h2>Projects & engineering focus</h2>
+    <div class="projects">
+      <div class="card project">
+        <h3>Enterprise APM Observability Platform</h3>
+        <p>Supported an enterprise monitoring platform with application, infrastructure, cloud and database visibility, dashboards, alerts, service health and RCA workflows.</p>
+        <div class="tags"><span class="tag">APM</span><span class="tag">RCA</span><span class="tag">Dashboards</span><span class="tag">Alerting</span></div>
+      </div>
+      <div class="card project">
+        <h3>Cloud & Kubernetes Monitoring</h3>
+        <p>Worked with monitoring concepts for AWS, Azure, Docker and Kubernetes environments, focusing on workload health, telemetry and troubleshooting.</p>
+        <div class="tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Kubernetes</span><span class="tag">Docker</span></div>
+      </div>
+      <div class="card project">
+        <h3>AI-Assisted Root Cause Analysis</h3>
+        <p>Explored AIOps, Generative AI, LLM-based analysis and RAG patterns integrated with observability data to accelerate incident diagnosis.</p>
+        <div class="tags"><span class="tag">AIOps</span><span class="tag">LLM</span><span class="tag">RAG</span><span class="tag">OpenTelemetry</span></div>
+      </div>
+      <div class="card project">
+        <h3>Monitoring Automation & Reporting</h3>
+        <p>Automated monitoring and reporting workflows using Python, PowerShell, Git Bash and SQL, with Excel and Power BI dashboards for stakeholders.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Automation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-kicker">Operational Focus</div>
+    <h2>How I approach reliability</h2>
+    <div class="grid">
+      <div class="card"><h3>Detect</h3><p>Build meaningful signals through metrics, logs, traces, thresholds, anomaly detection and service-health dashboards.</p></div>
+      <div class="card"><h3>Diagnose</h3><p>Correlate telemetry, dependencies and application behavior to investigate incidents and identify likely root causes.</p></div>
+      <div class="card"><h3>Improve</h3><p>Reduce alert noise, automate repetitive workflows, strengthen monitoring coverage and align operational views with SLI/SLO needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-kicker">Contact</div>
+    <h2>Let's connect</h2>
+    <div class="contact">
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <p>Professional profile and career history</p>
+        <br>
+        <a href="https://www.linkedin.com/in/jyoti-kumari-780a96209" target="_blank">linkedin.com/in/jyoti-kumari-780a96209</a>
+      </div>
+      <div class="contact-card">
+        <h3>Open to opportunities</h3>
+        <p>DevOps • Observability • SRE • Technical Product / Platform roles</p>
+        <br>
+        <a href="https://github.com/Jyotikumarisingh-123" target="_blank">github.com/Jyotikumarisingh-123</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Jyoti Kumari • DevOps • Technical Observability • SRE
+</footer>
+
 </body>
 </html>
